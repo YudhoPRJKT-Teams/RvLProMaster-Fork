@@ -158,10 +158,12 @@ class bot:
             raw_filter_list = r.read().splitlines()
         regex_list = [to_leet_regex(w) for w in raw_filter_list]
         text = msg.text or ""
+        match_found = False
         for pattern in regex_list:
             if re.search(pattern, text, re.IGNORECASE):
+                match_found = True
                 break
-        return await func()
+        return await func(match_found)
       cls.event.handlers_filter.append(wrapper)
       return wrapper
     return decorator
