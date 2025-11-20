@@ -45,6 +45,7 @@ class Account:
     with open(f"{os.getcwd()}/config.json", "r") as r:
       output_json = json.loads(r.read())
       cls.api_url = output_json['api_url']
+      cls.genai_key = output_json['genai_key']
       return cls
 
 class Auth:
