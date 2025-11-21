@@ -1,7 +1,8 @@
 from .Methods import (
   getMe,
   sendMessage,
-  deleteMessage
+  deleteMessage,
+  restrictChatMember
 )
 from .Updates import (
   getUpdates
@@ -100,7 +101,53 @@ class methods:
         message_id (int): Identifier of the message to delete
     """
     return await deleteMessage.Initialize(chat_id, message_id)
+  
+  # Methods: restrictChatMembers
+  @classmethod
+  async def restrictChatMember(cls,
+    chat_id: Union[str,int],
+    user_id: Union[str, int],
+    canSendMessage: Optional[bool] = True,
+    canSendAudios: Optional[bool] = True,
+    canSendDocuments: Optional[bool] = True,
+    canSendPhotos: Optional[bool] = True,
+    canSendVideos: Optional[bool] = True,
+    canSendVideoNotes: Optional[bool] = True,
+    canSendVoiceNotes: Optional[bool] = True,
+    canSendPolls: Optional[bool] = False,
+    canSendOtherMessages: Optional[bool] = True,
+    canAddWebPagePreviews: Optional[bool] = True,
+    canChangeInfo: Optional[bool] = False,
+    canInviteUsers: Optional[bool] = False,
+    canPinMessages: Optional[bool] = False,
+    canManageTopics: Optional[bool] = False,
+    until_date: Optional[str] = None
+  ):
+    """Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass True for all permissions to lift restrictions from a user. Returns True on success.
 
+    Args:
+        chat_id (Union[str,int]): Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)
+        user_id (Union[str, int]): Unique identifier of the target user
+        canSendMessage (Optional[bool], optional): Optional. True, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues. Defaults to True.
+        canSendAudios (Optional[bool], optional): Optional. True, if the user is allowed to send audios. Defaults to True.
+        canSendDocuments (Optional[bool], optional): Optional. True, if the user is allowed to send documents. Defaults to True.
+        canSendPhotos (Optional[bool], optional): Optional. True, if the user is allowed to send photos. Defaults to True.
+        canSendVideos (Optional[bool], optional): Optional. True, if the user is allowed to send videos. Defaults to True.
+        canSendVideoNotes (Optional[bool], optional): Optional. True, if the user is allowed to send video notes. Defaults to True.
+        canSendVoiceNotes (Optional[bool], optional): Optional. True, if the user is allowed to send voice notes. Defaults to True.
+        canSendPolls (Optional[bool], optional): Optional. True, if the user is allowed to send polls and checklists. Defaults to False.
+        canSendOtherMessages (Optional[bool], optional): Optional. True, if the user is allowed to send animations, games, stickers and use inline bots. Defaults to True.
+        canAddWebPagePreviews (Optional[bool], optional): Optional. True, if the user is allowed to add web page previews to their messages. Defaults to True.
+        canChangeInfo (Optional[bool], optional): Optional. True, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups. Defaults to False.
+        canInviteUsers (Optional[bool], optional): Optional. True, if the user is allowed to invite new users to the chat. Defaults to False.
+        canPinMessages (Optional[bool], optional): Optional. True, if the user is allowed to pin messages. Ignored in public supergroups. Defaults to False.
+        canManageTopics (Optional[bool], optional): Optional. True, if the user is allowed to create forum topics. If omitted defaults to the value of can_pin_messages. Defaults to False.
+        until_date (Optional[str], optional): Date when restrictions will be lifted for the user; Unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever. Defaults to None.
+
+    Returns:
+        _type_: _description_
+    """
+    return await restrictChatMember.Initialize(chat_id, user_id, canSendMessage, canSendAudios, canSendDocuments, canSendPhotos, canSendVideos, canSendVideoNotes, canSendVoiceNotes, canSendPolls, canSendOtherMessages, canAddWebPagePreviews, canChangeInfo, canInviteUsers, canPinMessages, canManageTopics, until_date)
 # class updates
 class updates:
   @classmethod
