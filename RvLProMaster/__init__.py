@@ -5,7 +5,8 @@ from .utils import (
   CreateLog,
   ParseMode,
   AIChatBOT,
-  Inline
+  Inline,
+  telegraph
 )
 # Bot methods and update
 from .bots import bot
