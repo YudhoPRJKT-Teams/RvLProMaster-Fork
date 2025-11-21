@@ -2,14 +2,15 @@ from .Methods import (
   getMe,
   sendMessage,
   deleteMessage,
-  restrictChatMember
+  restrictChatMember,
+  editMessageText
 )
 from .Updates import (
   getUpdates
 )
 from typing import Callable, Dict, Awaitable, Any, Optional, Union
 from functools import wraps
-from ..utils import CreateLog
+from ..utils import CreateLog, ParseMode
 from ..polling import Telegram
 from ..types.message import MESSAGE
 import asyncio
@@ -148,6 +149,19 @@ class methods:
         _type_: _description_
     """
     return await restrictChatMember.Initialize(chat_id, user_id, canSendMessage, canSendAudios, canSendDocuments, canSendPhotos, canSendVideos, canSendVideoNotes, canSendVoiceNotes, canSendPolls, canSendOtherMessages, canAddWebPagePreviews, canChangeInfo, canInviteUsers, canPinMessages, canManageTopics, until_date)
+  
+  # Methods: editMessageText
+  @classmethod
+  async def editMessageText(cls, chat_id: Union[str, int], text: Any, message_id: Union[str, int], parse_mode: str):
+    """Use this method to edit text and [game](https://core.telegram.org/bots/api#games) messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.
+
+    Args:
+        chat_id (Union[str, int]): Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+        text (Any): New text of the message, 1-4096 characters after entities parsing
+        message_id (Union[str, int]): Required if inline_message_id is not specified. Identifier of the message to edit
+        parse_mode (ParseMode): Mode for parsing entities in the message text
+    """
+    return await editMessageText.Initialize(chat_id, text, message_id, parse_mode)
 # class updates
 class updates:
   @classmethod
