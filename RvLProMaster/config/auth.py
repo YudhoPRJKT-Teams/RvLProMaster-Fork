@@ -46,6 +46,7 @@ class Account:
       output_json = json.loads(r.read())
       cls.api_url = output_json['api_url']
       cls.genai_key = output_json['genai_key']
+      cls.github_pat = output_json['github_pat']
       return cls
 
 class Auth:
