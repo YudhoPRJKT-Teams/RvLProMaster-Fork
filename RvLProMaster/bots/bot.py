@@ -4,7 +4,8 @@ from .Methods import (
   deleteMessage,
   restrictChatMember,
   editMessageText,
-  getChatAdministrators
+  getChatAdministrators,
+  getChatMemberCount
 )
 from .Updates import (
   getUpdates
@@ -173,6 +174,16 @@ class methods:
         chat_id (Union[str, int]): https://core.telegram.org/bots/api#chatmember
     """
     return await getChatAdministrators.Initialize(chat_id)
+  
+  # Methods: getChatMemberCount
+  @classmethod
+  async def getChatMemberCount(cls, chat_id: Union[str, int]):
+    """Use this method to get the number of members in a chat. Returns Int on success.
+
+    Args:
+        chat_id (Union[str, int]): Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)
+    """
+    return await getChatMemberCount.Initialize(chat_id)
 # class updates
 class updates:
   @classmethod
