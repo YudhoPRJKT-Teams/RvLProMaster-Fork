@@ -13,6 +13,7 @@ class sendMessage:
   raw_json = "N/A"
   serialize_json = "N/A"
   status_code = "N/A"
+  message_id = "N/A"
   
   @classmethod
   async def Initialize(cls, chat_id: Union[int, str], text: str, parse_mode: Any, disable_notification: bool = False, protect_content: bool = True, reply_markup: Optional[str ] = None, reply_chat: Optional[Union[int, str]] = None):
@@ -34,6 +35,7 @@ class sendMessage:
           if session.status == 200:
             cls.serialize_json = json.dumps(cls.raw_json, indent=2)
             cls.status_code = session.status
+            cls.message_id = cls.raw_json['result']['message_id']
           elif session.status == 400:
             # desc = cls.raw_json['description']
             des = cls.raw_json['description']
