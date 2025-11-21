@@ -8,10 +8,6 @@ import json
 api = Auth.Read.api_url
 
 class deleteMessage:
-  raw_json = "N/A"
-  serialize_json = "N/A"
-  status_code = "N/A"
-  
   @classmethod
   async def Initialize(cls, chat_id: Union[str, int], message_id: str):
     try:

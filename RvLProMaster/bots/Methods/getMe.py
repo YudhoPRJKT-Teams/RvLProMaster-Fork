@@ -7,10 +7,6 @@ import json
 api = Auth.Read.api_url
 
 class getMe:
-  raw_json = "N/A"
-  serialize_json = "N/A"
-  status_code = "N/A"
-  
   @classmethod
   async def Initialize(cls):
     try:

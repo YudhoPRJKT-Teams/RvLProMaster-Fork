@@ -8,11 +8,6 @@ import json
 api = Auth.Read.api_url
 
 class editMessageText:
-  raw_json = "N/A"
-  serialize_json = "N/A"
-  status_code = "N/A"
-  message_id = "N/A"
-  
   @classmethod
   async def Initialize(cls, chat_id: Union[str, int], text: Any, message_id: Union[str, int], parse_mode: str):
     try:
