@@ -1,0 +1,5 @@
+aiohttp[speedups]
+httpx
+google-genai
+Pillow
+openai

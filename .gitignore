@@ -5,3 +5,4 @@
 **/*.json
 **/gen_error.sh
 **/*.txt
+!requirements.txt
