@@ -3,7 +3,8 @@ from .Methods import (
   sendMessage,
   deleteMessage,
   restrictChatMember,
-  editMessageText
+  editMessageText,
+  getChatAdministrators
 )
 from .Updates import (
   getUpdates
@@ -162,6 +163,16 @@ class methods:
         parse_mode (ParseMode): Mode for parsing entities in the message text
     """
     return await editMessageText.Initialize(chat_id, text, message_id, parse_mode)
+  
+  # Methods: getChatAdministrators
+  @classmethod
+  async def getChatAdministrators(cls, chat_id: Union[str, int]):
+    """Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of [ChatMember](https://core.telegram.org/bots/api#chatmember) objects.
+
+    Args:
+        chat_id (Union[str, int]): https://core.telegram.org/bots/api#chatmember
+    """
+    return await getChatAdministrators.Initialize(chat_id)
 # class updates
 class updates:
   @classmethod
