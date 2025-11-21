@@ -4,7 +4,8 @@ from .config import Auth
 from .utils import (
   CreateLog,
   ParseMode,
-  AIChatBOT
+  AIChatBOT,
+  Inline
 )
 # Bot methods and update
 from .bots import bot
