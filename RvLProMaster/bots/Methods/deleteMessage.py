@@ -18,6 +18,7 @@ class deleteMessage:
         }
         async with ClientSession() as client:
           async with client.post(f"{api}/deleteMessage", data=payload) as session:
+            cls.raw_json = await session.json()
             if session.status == 200:
               cls.serialize_json = json.dumps(cls.raw_json, indent=2)
               cls.status_code = session.status
