@@ -5,3 +5,4 @@ from .restrictChatMember import restrictChatMember
 from .editMessageText import editMessageText
 from .getChatAdministrators import getChatAdministrators
 from .getChatMemberCount import getChatMemberCount
+from .getChatMember import getChatMember

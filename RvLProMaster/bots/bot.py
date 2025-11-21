@@ -5,7 +5,8 @@ from .Methods import (
   restrictChatMember,
   editMessageText,
   getChatAdministrators,
-  getChatMemberCount
+  getChatMemberCount,
+  getChatMember
 )
 from .Updates import (
   getUpdates
@@ -184,6 +185,17 @@ class methods:
         chat_id (Union[str, int]): Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)
     """
     return await getChatMemberCount.Initialize(chat_id)
+  
+  # Methods: getChatMember
+  @classmethod
+  async def getChatMember(cls, chat_id: Union[str, int], user_id: Union[str, int]):
+    """Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a [ChatMember](https://core.telegram.org/bots/api#chatmember) object on success.
+
+    Args:
+        chat_id (Union[str, int]): Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)
+        user_id (Union[str, int]): Unique identifier of the target user
+    """
+    return await getChatMember.Initialize(chat_id, user_id)
 # class updates
 class updates:
   @classmethod
