@@ -15,7 +15,7 @@ class sendMessage:
   status_code = "N/A"
   
   @classmethod
-  async def Initialize(cls, chat_id: Union[int, str], text: str, parse_mode: Any, disable_notification: bool = False, protect_content: bool = True, reply_markup: Optional[dict] = None, reply_chat: Optional[Union[int, str]] = None):
+  async def Initialize(cls, chat_id: Union[int, str], text: str, parse_mode: Any, disable_notification: bool = False, protect_content: bool = True, reply_markup: Optional[str ] = None, reply_chat: Optional[Union[int, str]] = None):
     try:
       payload = {
         'chat_id': chat_id,

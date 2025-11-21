@@ -63,7 +63,7 @@ class methods:
     return await getMe.Initialize()
   # Methods: sendMessage
   @classmethod
-  async def sendMessage(cls, chat_id: Union[int, str], text: str, parse_mode: Any, disable_notification: bool = False, protect_content: bool = True, reply_markup: Optional[dict] = None, reply_chat: Optional[Union[int,str]] = None):
+  async def sendMessage(cls, chat_id: Union[int, str], text: str, parse_mode: Any, disable_notification: bool = False, protect_content: bool = True, reply_markup: Optional[str] = None, reply_chat: Optional[Union[int,str]] = None):
     """Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
 
     Args:
