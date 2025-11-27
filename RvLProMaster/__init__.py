@@ -7,7 +7,8 @@ from .utils import (
   AIChatBOT,
   Inline,
   telegraph,
-  UnixTime
+  UnixTime,
+  Download
 )
 # Bot methods and update
 from .bots import bot
