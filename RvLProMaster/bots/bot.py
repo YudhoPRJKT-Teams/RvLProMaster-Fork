@@ -65,7 +65,7 @@ class methods:
   @classmethod
   async def getMe(cls):
     """A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a [User](https://core.telegram.org/bots/api#user) object."""
-    return await getMe.Initialize()
+    return await getMe()
   # Methods: sendMessage
   @classmethod
   async def sendMessage(cls, chat_id: Union[int, str], text: str, parse_mode: Any, disable_notification: bool = False, protect_content: bool = True, reply_markup: Optional[str] = None, reply_chat: Optional[Union[int,str]] = None):
